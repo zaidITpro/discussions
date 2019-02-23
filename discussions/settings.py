@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pages',  #custom app
+    'user',  #custom app
     
 ]
 
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'discussions.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,5 +134,10 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static/login"),
+    os.path.join(BASE_DIR, "static/theme"),
 ]
+
+
+#Custom User Model
+
+AUTH_USER_MODEL = 'user.CustomUser' # new
