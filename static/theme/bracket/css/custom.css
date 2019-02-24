@@ -1,0 +1,11 @@
+.header-buttons{
+    margin: 10px;
+    box-sizing: border-box;
+    margin-right: 5px; 
+}
+.header-buttons a{
+    color: #0866C6;
+}
+.btn{
+    cursor: pointer;
+}
