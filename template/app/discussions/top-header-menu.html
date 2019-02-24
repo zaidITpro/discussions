@@ -12,6 +12,17 @@
         </div><!-- br-header-left -->
         <div class="br-header-right">
           <nav class="nav">
+            
+            {% if not user.is_authenticated %}
+            <!-- If user is not logged in then we will show the login and sign up buttons-->
+            <div class='signup-header-button header-buttons'>
+                <a href="{% url 'signup' %}" class="btn btn-outline-primary bd-1">Sign Up</a>
+            </div>
+            <div class='login-header-button header-buttons'>
+                <a href="{% url 'signin' %}" class="btn btn-outline-primary bd-1">Log In</a>
+            </div>
+            {% else %}
+            <!--IF user is logged in then we will show the following links-->
             <div class="dropdown">
               <a href="" class="nav-link pd-x-7 pos-relative" data-toggle="dropdown">
                 <i class="icon ion-ios-email-outline tx-24"></i>
@@ -156,16 +167,19 @@
                   <li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
                 </ul>
               </div><!-- dropdown-menu -->
-            </div><!-- dropdown -->
+            </div>
+            <!--dropdown-->
+            {% endif %} <!--end of the user authenticated check -->
           </nav>
-          <div class="navicon-right">
-            <a id="btnRightMenu" href="" class="pos-relative">
-              <i class="icon ion-ios-chatboxes-outline"></i>
+          <!-- <div class="navicon-right"> -->
+            <!-- <a id="btnRightMenu" href="" class="pos-relative"> -->
+              <!-- <i class="icon ion-ios-chatboxes-outline"></i> -->
               <!-- start: if statement -->
-              <span class="square-8 bg-danger pos-absolute t-10 r--5 rounded-circle"></span>
+              <!-- <span class="square-8 bg-danger pos-absolute t-10 r--5 rounded-circle"></span> -->
               <!-- end: if statement -->
-            </a>
-          </div><!-- navicon-right -->
+            <!-- </a> -->
+          <!-- </div> -->
+          <!--navicon-right-->
         </div><!-- br-header-right -->
       </div><!-- br-header -->
       <!-- ########## END: HEAD PANEL ########## -->
